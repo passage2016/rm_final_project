@@ -129,7 +129,7 @@ for step in range(2000):
         action = ""
     else:
         file_path = f'./data/pcd/pcd{step - 1}.npy'
-        global_points = np.load(file_path)
+        scan_map = np.load(file_path)
         save_map(global_points, f"./data/robotic/scan_map{step}.png")
         global_points = global_points + restore_to_global_map(scan_map, x, (12 - y), angle)
         global_points = [x_y.split("_") for x_y in list(set([f"{x}_{y}" for (x, y) in global_points]))]
