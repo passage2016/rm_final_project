@@ -151,8 +151,8 @@ for step in range(2000):
             x, y = x + 0.259 * math.cos(angle_rad), y - 0.259 * math.sin(angle_rad)
         if action == "go":
             angle_rad = math.radians(angle)
-            pre_distance = get_degree(step - 1)
-            current_distance = get_degree(step)
+            pre_distance = get_distance(step - 1)
+            current_distance = get_distance(step)
             move_distance = pre_distance - current_distance
             x, y = x + move_distance * math.cos(angle_rad), y - move_distance * math.sin(angle_rad)
 
